@@ -4685,6 +4685,21 @@ app.get('/w-odi-bt-19',function (req,res) {
     })
 });
 
+app.get('/women-news',function (req,res) {
+
+    var url ="http://www.espncricinfo.com/icc-womens-championship-2014-16/content/story/news.html?object=772563";
+    request(url, function(error, response, html) {
+
+        var $ = cheerio.load(html);
+
+        if(!error)
+        {
+            var data = $(".story-item").html();
+            res.send(data);
+        }
+    });
+
+});
 app.post('/favourites', function (req, res) {
 
     dbhandler.searchFavourites(req.body.username, function (result) {
