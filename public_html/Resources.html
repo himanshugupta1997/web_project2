@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> <! This will help in zooming in mobile>
-    <title>Cricket Stats</title>
-
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-
-
-
+    <title>Resources</title>
 </head>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script src="jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+
 <style>
 
     .navbar-default
@@ -77,10 +75,7 @@
         color: #ffbbbc;
         font-size: 1.3em;
     }
-
-
     @media (max-width: 767px) {
-
         .navbar-default .navbar-nav .open .dropdown-menu > li > a {
             color: #ecf0f1;
         }
@@ -96,29 +91,28 @@
         }
     }
 
-    body
+    
+    mark
     {
-        background: url("assets/img/backgrounds/bg7.jpg");
-        background-size: 100%;
+        font-size: 2em;
+        color: red;
     }
 
     a
     {
-        color: white;
-    }
-
-    a:hover
-    {
-        background-color: tomato;
-        color: white;
+        font-size: 2em;
+        color: darkgreen;
     }
     
+    body
+    {
+        background : url("assets/img/backgrounds/bg3.jpg");
+        background-size: 120%;
+    }
 
 
 </style>
 <body>
-
-
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -133,9 +127,10 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li>
-                    <a href="aboutUs.html">About Us </a>
+                    <a href="#">About Us </a>
                 </li>
                 <li><a href="project.html">Project</a></li>
+                <li class="active"><a href="Resources.html">Resources</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="new_user.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -145,101 +140,61 @@
     </div>
 </nav>
 
+<br><br><br>
 
-<div class="container">
-    <br><br>
-    <div class="row">
 
-        <div class="col-sm-12">
-            <h1 align="center" style="font-family: Serif ; font-size: 80px;color: blueviolet" >CRICKET STATS</h1>
+<div class="container-fluid">
+
+    <div class="row" id="row1">
+
+
+
+        <div class="col-sm-3" style="background-color: #2aabd2; text-align: center" id="row1-div2">
+                <br>
+            <mark>Cricket Records Scrapped From </mark>
+            <br><br><br>
+            <a href="http://www.espncricinfo.com/">Cric Info</a>
+            <br>
+
+        </div>
+        <br><br>
+        <div class="col-sm-1" id="row1-div3">
+
+
+
         </div>
 
-    </div>
-    <br><br>
-    <div class="row">
-
-        <div class="col-sm-5" style="background-color: white;box-shadow: 8px 8px 16px black; color: purple">
-            <h2 align="center">TEST MATCHES</h2>
-            <table class="table table-responsive table-bordered table-hover" id="t1">
-
-                <tbody >
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/batting.html">Batting records</a></td>
-                </tr>
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/bowling.html">Bowling records</a></td>
-                </tr>
-
-                <tr>
-                    <td> <a style="text-decoration: none" href="w-test/wicket-keeping.html">Wicketkeeping records</a></td>
-                </tr>
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/fielding.html">Fielding records</a></td>
-                </tr>
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/all-round.html">All-round records</a></td>
-                </tr>
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/partnership.html">Partnership records</a></td>
-                </tr>
+        <div class="col-sm-4" style="background-color: #2aabd2; text-align: center" id="row1-div4">
+            <br>
+            <mark>Some Code Reference From</mark>
+            <br><br><br>
+            <a href="http://www.w3schools.com/">W3 Schools</a>
+            <br>
+        </div>
+        <br><br>
+        <div class="col-sm-1" id="row1-div5">
 
 
-                </tbody>
-            </table>
+
         </div>
 
-        <div class="col-sm-2"></div>
-
-        <div class="col-sm-5" style="background-color: white;box-shadow: 8px 8px 16px black; color: purple;">
-            <h2 align="center">ODI</h2>
-            <table class="table table-responsive table-bordered table-hover">
-
-                <tbody >
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/batting.html">Batting records</a></td>
-                </tr>
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/bowling.html">Bowling records</a></td>
-                </tr>
-
-                <tr>
-                    <td> <a style="text-decoration: none" href="w-odi/wicket-keeping.html">Wicketkeeping records</a></td>
-                </tr>
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/fielding.html">Fielding records</a></td>
-                </tr>
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/all-round.html">All-round records</a></td>
-                </tr>
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/partnership.html">Partnership records</a></td>
-                </tr>
-
-
-                </tbody>
-            </table>
+        <div class="col-sm-3" style="background-color: #2aabd2; text-align: center" id="row1-div6">
+            <br>
+            <mark>Knowledge Scrapped From </mark>
+            <br><br><br>
+            <a href="https://www.facebook.com/championswimmer">Arnav Sir</a>
+            <br>
         </div>
+        <br><br>
 
 
     </div>
+
+
+
+
 </div>
 
-<script>
 
-
-    $('td').css({'background-color' : 'purple', 'color' : 'white', 'text-align' : 'center', 'font-size' : '1.3em'});
-
-
-
-
-
-
-</script>
 </body>
 </html>
