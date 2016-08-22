@@ -116,7 +116,6 @@
                     <a href="aboutUs.html">About Us </a>
                 </li>
                 <li><a href="project.html">Project</a></li>
-                <li><a href="Resources.html">Resources</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="new_user.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -137,7 +136,7 @@
     <br><br>
     <div class="row">
 
-        <div class="col-sm-5" style="background-color: cornsilk">
+        <div class="col-sm-5" style="background-color: cornsilk;box-shadow: 8px 8px 16px black">
             <h2 align="center">TEST MATCHES</h2>
             <table class="table table-responsive table-bordered table-hover" id="t1">
 
@@ -172,7 +171,7 @@
 
         <div class="col-sm-2"></div>
 
-        <div class="col-sm-5" style="background-color: cornsilk">
+        <div class="col-sm-5" style="background-color: cornsilk;box-shadow: 8px 8px 16px black">
             <h2 align="center">ODI</h2>
             <table class="table table-responsive table-bordered table-hover">
 
@@ -215,29 +214,7 @@
 <script>
 
 
-    $(function () {
 
-        if(localStorage.getItem('username')!=null) {
-            var string = '<div class="container-fluid">  <div class="navbar-header">' +
-                    '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> ' +
-                    '<span class="icon-bar"></span> '
-                    + '<span class="icon-bar"></span>  ' +
-                    '<span class="icon-bar"></span>' +
-                    '</button>' +
-                    '<a class="navbar-brand" href="index.html">Cricket</a>  </div>  ' +
-                    '<div class="collapse navbar-collapse" id="myNavbar"> <ul class="nav navbar-nav"> ' +
-                    '<li><a href="index.html" id="home-button">Home</a></li>  <li>  <a href="aboutUs.html">About Us </a> </li>' +
-                    '<li><a href="project.html">Project</a></li>  <li><a href="Resources.html">Resources</a></li>' +
-                    '</ul>  <ul class="nav navbar-nav navbar-right">     ' +
-                    '<li><a href="logged.html"><span class="glyphicon glyphicon-user"></span>Account</a></li>  ' +
-                    '<li><a id="log-out" href="index.html"><span class="glyphicon glyphicon-off"></span>Log Out</a></li>' +
-                    '</ul>  ' + ' </div>'
-                    + '</div> ';
-
-
-            $('.navbar').html(string);
-        }
-    });
 
 </script>
 </body>
