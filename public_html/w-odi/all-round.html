@@ -109,20 +109,20 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="../index.html" id="home-button">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li>
                     <a href="../aboutUs.html">About Us </a>
                 </li>
                 <li><a href="../project.html">Project</a></li>
-
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="../logged.html"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-                <li><a id="log-out" href="../index.html"><span class="glyphicon glyphicon-off"></span>Log Out</a></li>
+                <li><a href="../new_user.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="../login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 <div class="container">
     <div class="row">
@@ -218,6 +218,12 @@
 <script>
 
 
+
+    $('a').attr('href','#');
+
+
+
+
     function show_table(data) {
 
         $("#body").css("display","none");
@@ -230,6 +236,7 @@
     $("#1").click(function () {
 
         $("#loading").css("display","block");
+
         $.get('/w-odi-ar-1',function (data,status) {
             show_table(data);
         });
@@ -293,8 +300,8 @@
             show_table(data);
         });
     });
-    
-    
+
+
     $("#9").click(function () {
 
         $("#loading").css("display","block");
