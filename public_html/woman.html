@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Woman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"> <! This will help in zooming in mobile>
-    <title>Resources</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
 </head>
-
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<script src="jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-
 <style>
 
     .navbar-default
@@ -75,7 +73,10 @@
         color: #ffbbbc;
         font-size: 1.3em;
     }
+
+
     @media (max-width: 767px) {
+
         .navbar-default .navbar-nav .open .dropdown-menu > li > a {
             color: #ecf0f1;
         }
@@ -91,28 +92,37 @@
         }
     }
 
-    
-    mark
+    @media screen and (max-width: 992px)
     {
-        font-size: 2em;
-        color: red;
+        #heading
+        {
+            font-size: 0.5em;
+        }
     }
 
-    a
+
+
+    #heading
     {
-        font-size: 2em;
-        color: darkgreen;
+
+        text-align: center;
+        font-weight: 900;
+        color: deeppink;
+        font-style: italic;
+        font-family: fantasy;
+        font-size: 5em;
+        text-decoration: underline;
     }
     
     body
     {
-        background : url("assets/img/backgrounds/bg3.jpg");
-        background-size: 120%;
+        background: url("assets/img/backgrounds/woman1.jpg");
+        background-size: 100%;
     }
-
 
 </style>
 <body>
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -127,10 +137,10 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li>
-                    <a href="#">About Us </a>
+                    <a href="aboutUs.html">About Us </a>
                 </li>
                 <li><a href="project.html">Project</a></li>
-                <li class="active"><a href="Resources.html">Resources</a></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="new_user.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -140,60 +150,92 @@
     </div>
 </nav>
 
-<br><br><br>
 
+    <div class="container-fluid">
 
-<div class="container-fluid">
+        <div class="row" id="heading" style="margin: 0px; padding: 0px;">
 
-    <div class="row" id="row1">
+            <span style="background-color: rgba(0,255,255,0.6)" >WOMEN CRICKET
+            </span>
+        </div>
+        <div class="row" style="text-align: center; margin: 0px; padding: 0px">
 
+            <span style="background-color: rgba(0,255,255,0.6); font-size: 3em; color: deeppink;        font-style: italic; text-decoration: underline;        font-family: fantasy;" >Its a woman's world
 
+            </span>
+        </div>
+        
+        <br><br><br>
+        
+        <div class="row" style="text-align: justify; background-color: rgba(0,128,128,0.9);">
+            
+            <br>
+            <span style="text-align: justify;  color: hotpink; font-size: 2em; font-family: cursive">
+                
+                In a world where women are making their presence felt everyday, where women are capable of establishing and dissolving governments, where women are fighting terrorists, bringing medals and forming a indispensable part of leadership and judiciary, a website devoted to cricket would have been of no use if it lacked an exclusive section for women's cricket.
+                
+            </span>
 
-        <div class="col-sm-3" style="background-color: #2aabd2; text-align: center" id="row1-div2">
-                <br>
-            <mark>Cricket Records Scrapped From </mark>
-            <br><br><br>
-            <a href="http://www.espncricinfo.com/">Cric Info</a>
             <br>
 
+            
         </div>
         <br><br>
-        <div class="col-sm-1" id="row1-div3">
+        <div class="row" style="background-color: rgba(0,128,128,0.9); padding: 0px">
 
+        <p style="font-size: 2em; text-align: center; background-color: rgba(100,255,0,0.5); color: whitesmoke; margin: 0px; padding: 0px">
 
+            So, here is our woman's section. <br>Here you can find stats and matches related only to women's cricket.<br>Many more features coming soon.
 
+        </p>
         </div>
 
-        <div class="col-sm-4" style="background-color: #2aabd2; text-align: center" id="row1-div4">
-            <br>
-            <mark>Some Code Reference From</mark>
-            <br><br><br>
-            <a href="http://www.w3schools.com/">W3 Schools</a>
-            <br>
-        </div>
-        <br><br>
-        <div class="col-sm-1" id="row1-div5">
-
-
-
-        </div>
-
-        <div class="col-sm-3" style="background-color: #2aabd2; text-align: center" id="row1-div6">
-            <br>
-            <mark>Knowledge Scrapped From </mark>
-            <br><br><br>
-            <a href="https://www.facebook.com/championswimmer">Arnav Sir</a>
-            <br>
-        </div>
         <br><br>
 
+        <div class="row">
+
+            <div class="col-sm-1">
+
+
+
+            </div>
+
+            <div class="col-sm-4">
+
+                <button style="font-size: 2.5em" class="btn btn-danger btn-block">
+
+                    Records
+
+                </button>
+
+            </div>
+
+            <div class="col-sm-2">
+
+
+
+            </div>
+
+            <div class="col-sm-4">
+
+                <button class="btn btn-danger btn-block" style="font-size: 2.5em">
+
+                    Matches
+
+                </button>
+
+            </div>
+
+            <div class="col-sm-1">
+
+
+
+            </div>
+
+        </div>
 
     </div>
 
-
-
-
-</div>
 
 
 </body>
