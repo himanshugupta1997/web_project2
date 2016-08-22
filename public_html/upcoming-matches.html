@@ -194,6 +194,8 @@
     <button type="button" class="btn-success btn-lg" style="display: none" id="show-more2">Show more</button>
     <button type="button" class="btn-success btn-lg" style="display: none" id="show-more3">Show more</button>
 
+    </div>
+
 <script>
 
     var cnt=0;
@@ -205,12 +207,7 @@
                     $("#t1 a").attr("href" , "#");
                     $("#show-more1").css("display","block");
                     cnt++;
-
-                    $("#t1 #ycric-series-schedule-upcoming-navigation ").css("display","none");
-                    $("#t1 .ycric-pagination-numbers").css("display","none");
-                    $("#t1 .links").css("display","none");
-                    $("#t1 .ycric-pagination-total").css("display","none");
-
+                    remove_junk1();
                 })
             });
 
@@ -225,10 +222,7 @@
                 $("#t2").html(data);
                 $("#t2 a").attr("href" , "#");
                 cnt++;
-                $("#t2 #ycric-series-schedule-upcoming-navigation").css("display","none");
-                $("#t2 .ycric-pagination-numbers").css("display","none");
-                $("#t2 .links").css("display","none");
-                $("#t2 .ycric-pagination-total").css("display","none");
+                remove_junk2();
             })
         }
 
@@ -238,10 +232,7 @@
                 $("#t3").html(data);
                 $("#t3 a").attr("href" , "#");
                 cnt++;
-                $("#t3 #ycric-series-schedule-upcoming-navigation").css("display","none");
-                $("#t3 .ycric-pagination-numbers").css("display","none");
-                $("#t3 .links").css("display","none");
-                $("#t3 .ycric-pagination-total").css("display","none");
+                remove_junk3();
             })
         }
 
@@ -251,10 +242,7 @@
                 $("#t4").html(data);
                 $("#t4 a").attr("href" , "#");
                 $("#show-more1").css("display","none");
-                $("#t4 #ycric-series-schedule-upcoming-navigation").css("display","none");
-                $("#t4 .ycric-pagination-numbers").css("display","none");
-                $("#t4 .links").css("display","none");
-                $("#t4 .ycric-pagination-total").css("display","none");
+                remove_junk4();
             })
         }
     });
@@ -268,10 +256,7 @@
                    $("#t1 a").attr("href" , "#");
                    $("#show-more2").css("display","block");
                    cnt++;
-                   $("#t1 #ycric-series-schedule-upcoming-navigation ").css("display","none");
-                   $("#t1 .ycric-pagination-numbers").css("display","none");
-                   $("#t1 .links").css("display","none");
-                   $("#t1 .ycric-pagination-total").css("display","none");
+                  remove_junk1();
                })
            });
 
@@ -287,10 +272,7 @@
                 $("#t2").html(data);
                 $("#t2 a").attr("href" , "#");
                 cnt++;
-                $("#t2 #ycric-series-schedule-upcoming-navigation ").css("display","none");
-                $("#t2 .ycric-pagination-numbers").css("display","none");
-                $("#t2 .links").css("display","none");
-                $("#t2 .ycric-pagination-total").css("display","none");
+                remove_junk2();
             })
         }
 
@@ -301,10 +283,7 @@
                 $("#t3").html(data);
                 $("#t3 a").attr("href" , "#");
                 cnt++;
-                $("#t3 #ycric-series-schedule-upcoming-navigation ").css("display","none");
-                $("#t3 .ycric-pagination-numbers").css("display","none");
-                $("#t3 .links").css("display","none");
-                $("#t3 .ycric-pagination-total").css("display","none");
+                remove_junk3();
             })
         }
 
@@ -314,10 +293,7 @@
                 $("#t4").html(data);
                 $("#t4 a").attr("href" , "#");
                 cnt++;
-                $("#t4 #ycric-series-schedule-upcoming-navigation ").css("display","none");
-                $("#t4 .ycric-pagination-numbers").css("display","none");
-                $("#t4 .links").css("display","none");
-                $("#t4 .ycric-pagination-total").css("display","none");
+                remove_junk4();
             })
         }
 
@@ -345,10 +321,7 @@
                 $("#t1 a").attr("href" , "#");
                 $("#show-more3").css("display","block");
                 cnt++;
-                $("#t1 #ycric-series-schedule-upcoming-navigation ").css("display","none");
-                $("#t1 .ycric-pagination-numbers").css("display","none");
-                $("#t1 .links").css("display","none");
-                $("#t1 .ycric-pagination-total").css("display","none");
+                remove_junk1();
             })
         });
 
@@ -363,10 +336,7 @@
                 $("#t2").html(data);
                 $("#t2 a").attr("href" , "#");
                 cnt++;
-                $("#t2 #ycric-series-schedule-upcoming-navigation ").css("display","none");
-                $("#t2 .ycric-pagination-numbers").css("display","none");
-                $("#t2 .links").css("display","none");
-                $("#t2 .ycric-pagination-total").css("display","none");
+                remove_junk2();
             })
         }
 
@@ -378,10 +348,7 @@
                 $("#t3 a").attr("href" , "#");
                 cnt++;
                 $("#show-more3").css("display","none");
-                $("#t3 #ycric-series-schedule-upcoming-navigation ").css("display","none");
-                $("#t3 .ycric-pagination-numbers").css("display","none");
-                $("#t3 .links").css("display","none");
-                $("#t3 .ycric-pagination-total").css("display","none");
+                remove_junk3();
             })
         }
     });
@@ -399,6 +366,35 @@
         callback("");
     }
 
+
+    function remove_junk1() {
+
+        $("#t1 #ycric-series-schedule-upcoming-navigation ").css("display","none");
+        $("#t1 .ycric-pagination-numbers").css("display","none");
+        $("#t1 .links").css("display","none");
+        $("#t1 .ycric-pagination-total").css("display","none");
+    }
+    function remove_junk2() {
+
+        $("#t2 #ycric-series-schedule-upcoming-navigation ").css("display","none");
+        $("#t2 .ycric-pagination-numbers").css("display","none");
+        $("#t2 .links").css("display","none");
+        $("#t2 .ycric-pagination-total").css("display","none");
+    }
+    function remove_junk3() {
+        $("#t3 #ycric-series-schedule-upcoming-navigation ").css("display","none");
+        $("#t3 .ycric-pagination-numbers").css("display","none");
+        $("#t3 .links").css("display","none");
+        $("#t3 .ycric-pagination-total").css("display","none");
+    }
+    function remove_junk4() {
+        $("#t4 #ycric-series-schedule-upcoming-navigation ").css("display","none");
+        $("#t4 .ycric-pagination-numbers").css("display","none");
+        $("#t4 .links").css("display","none");
+        $("#t4 .ycric-pagination-total").css("display","none");
+    }
+
 </script>
+
 </body>
 </html>

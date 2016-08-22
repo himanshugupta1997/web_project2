@@ -154,7 +154,7 @@
 
         <div class="col-sm-12">
 
-            <h1 align="center" id="heading">Recently Concluded</h1>
+            <h1 align="center" id="heading">Results</h1>
 
         </div>
 
@@ -212,6 +212,14 @@
 
     var cnt=0;
 
+    function remove_junk() {
+
+        $("#t1 #ycric-series-schedule-past-navigation").css("display","none");
+        $("#t1 .ycric-pagination-numbers").css("display","none");
+        $("#t1 .links").css("display","none");
+        $("#t1 .ycric-pagination-total").css("display","none");
+    }
+
     $("#1").click(function () {
 
         initialise(function () {
@@ -220,6 +228,7 @@
                 $("#t1 a").attr("href" , "#");
                 cnt++;
                 $("#next").css("display","block");
+                remove_junk();
             })
         });
     });
@@ -231,6 +240,7 @@
             $("#next").css("display","none");
             $("#prev").css("display","block");
             cnt++;
+            remove_junk();
         });
     });
 
@@ -242,6 +252,7 @@
             $("#next").css("display","block");
             $("#prev").css("display","none");
             cnt--;
+            remove_junk();
         })
     });
 
@@ -254,6 +265,8 @@
                 $("#t1 a").attr("href" , "#");
                 cnt++;
                 $("#next2").css("display","block");
+                $("#t1 #ycric-series-schedule-upcoming-navigation ").css("display","none");
+                 remove_junk();
             })
         });
     });
@@ -268,6 +281,7 @@
                 $("#t1 a").attr("href" , "#");
                 $("#prev2").css("display","block");
                 cnt++;
+                remove_junk();
             });
         }
 
@@ -278,6 +292,7 @@
                 $("#t1 a").attr("href" , "#");
                 cnt++;
                 $("#next2").css("display","none");
+                remove_junk();
             });
         }
 
@@ -294,6 +309,7 @@
                 $("#t1 a").attr("href" , "#");
                 $("#prev2").css("display","none");
                 cnt--;
+                remove_junk();
             });
         }
 
@@ -304,6 +320,7 @@
                 $("#t1 a").attr("href" , "#");
                 $("#next2").css("display","block");
                 cnt--;
+                remove_junk();
             });
         }
        
@@ -320,6 +337,7 @@
                 $("#t1 a").attr("href" , "#");
                 cnt++;
                 $("#next3").css("display","block");
+                remove_junk();
             })
         });
     });
@@ -334,6 +352,7 @@
                 $("#t1 a").attr("href" , "#");
                 cnt++;
                 $("#prev3").css("display","block");
+                remove_junk();
             });
         }
 
@@ -343,6 +362,7 @@
                 $("#t1").html(data);
                 $("#t1 a").attr("href" , "#");
                 cnt++;
+                remove_junk();
             });
         }
         else if(cnt==3)
@@ -351,6 +371,7 @@
                 $("#t1").html(data);
                 $("#t1 a").attr("href" , "#");
                 cnt++;
+                remove_junk();
             });
         }
         
@@ -361,6 +382,7 @@
                 $("#t1 a").attr("href" , "#");
                 $("#next3").css("display","none");
                 cnt++;
+                remove_junk();
             });
         }
 
@@ -377,6 +399,7 @@
                 $("#t1 a").attr("href" , "#");
                 $("#prev3").css("display","none");
                 cnt--;
+                remove_junk();
             });
         }
 
@@ -395,6 +418,7 @@
                 $("#t1").html(data);
                 $("#t1 a").attr("href" , "#");
                 cnt--;
+                remove_junk();
             });
         }
 
@@ -405,6 +429,7 @@
                  $("#t1 a").attr("href" , "#");
                  cnt--;
                  $("#next3").css("display","block");
+                 remove_junk();
              });
          }
     });
