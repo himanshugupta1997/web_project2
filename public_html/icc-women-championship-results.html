@@ -108,6 +108,9 @@
             font-style: italic;
             font-size: 80px;
         }
+
+
+
     }
 
 
@@ -171,7 +174,7 @@
     </div>
     <div class="row">
         <div class="col-xs-1"></div>
-        <div class="col-xs-10"  id="t1" >
+        <div class="col-xs-10"  id="t1" style="padding: 15px">
 
         </div>
         <div class="col-xs-1"></div>
@@ -211,6 +214,8 @@ var cnt=0;
 
           var el1 = $("#t1");
             el1.html(data);
+           el1.css("background-color","purple").css("color","white");
+
             //$("#t1 .large-5").filter('.medium-5').filter('.hide-for-small').filter('.columns').filter('.arrow-right-data').css("display","none");
             el1.filter(".large-5").css("display","none");
 
@@ -234,6 +239,12 @@ var cnt=0;
                    el2.eq(i).css("display","none");
                }
 
+           }
+
+           el2 = $("#t1 span").filter(".potMatchLink");
+           for(i=0;i<el2.length;i++)
+           {
+               el2.eq(i).children().first().attr("href","#");
            }
 
            $("#t1 section").filter(".most_viewed").css("display","none");
@@ -270,6 +281,7 @@ var cnt=0;
 
 
         ///FOR OWN SCORECARDS
+        // Please Dont Delete Now
        /* if(cnt>=0 && cnt < arr.length )
         {
             $.get('/w-scores',{url:arr[cnt]},function (data,status) {
@@ -313,8 +325,6 @@ function display_scores_onclick() {
 }
 
 
-
-
         $("#prev").click(function () {
 
             display_scores(-1);
@@ -334,4 +344,19 @@ function display_scores_onclick() {
 
 </script>
 </body>
+<style>
+
+    a
+    {
+        color:yellow;
+    }
+
+    a:hover
+    {
+        background-color:orangered;
+        color: white;
+    }
+
+
+</style>
 </html>
