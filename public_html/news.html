@@ -232,9 +232,7 @@
                 $("#more2").css("display","block");
                 $("#top2").css("display","block");
                 $("#div2").html(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
-
+                append_data();
                 cnt++;
             })
         });
@@ -246,8 +244,7 @@
         {
             $.get('/hl2',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -255,8 +252,7 @@
         {
             $.get('/hl3',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -264,8 +260,7 @@
         {
             $.get('/hl4',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -274,8 +269,7 @@
         {
             $.get('/hl5',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -284,8 +278,7 @@
         {
             $.get('/hl6',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -293,8 +286,7 @@
         {
             $.get('/hl7',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -302,8 +294,7 @@
         {
             $.get('/hl8',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -312,8 +303,7 @@
         {
             $.get('/hl9',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -323,8 +313,7 @@
             $.get('/hl10',function (data,status) {
                 $("#div2").append(data);
                 cnt++;
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 $("#more").css("disabled");
             });
         }
@@ -340,8 +329,7 @@
                 $("#div2").html(data);
                 $("#more").css("display","block");
                 $("#top").css("display","block");
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             })
         });
@@ -355,8 +343,7 @@
         {
             $.get('/interview2',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
                 cnt++;
             });
         }
@@ -364,8 +351,7 @@
         {
             $.get('/interview3',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
 
                 cnt++;
             });
@@ -374,9 +360,7 @@
         {
             $.get('/interview4',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
-
+                append_data();
                 cnt++;
             });
         }
@@ -385,10 +369,7 @@
         {
             $.get('/interview5',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
-
-
+                append_data();
                 cnt++;
             });
         }
@@ -397,9 +378,7 @@
         {
             $.get('/interview6',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
-
+                append_data();
                 cnt++;
             });
         }
@@ -407,9 +386,7 @@
         {
             $.get('/interview7',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
-
+                append_data();
                 cnt++;
             });
         }
@@ -417,9 +394,7 @@
         {
             $.get('/interview8',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").href("#");
-                $("#div2 img").attr("class","img-responsive");
-
+                append_data();
                 cnt++;
             });
         }
@@ -428,9 +403,7 @@
         {
             $.get('/interview9',function (data,status) {
                 $("#div2").append(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
-
+                append_data();
                 cnt++;
             });
         }
@@ -441,9 +414,7 @@
                 $("#div2").append(data);
                 cnt++;
                 $("#more").css("disabled");
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
-
+                append_data();
             });
         }
 
@@ -456,8 +427,7 @@
                 window.location.href="#heading";
                 $("#heading").text("Featured News");
                 $("#div2").html(data);
-                $("#div2 a").attr("href","#");
-                $("#div2 img").attr("class","img-responsive");
+                append_data();
             });
         });
     });
@@ -470,7 +440,13 @@
     });
 
 
+    function append_data()
+    {
 
+        $("#div2 img").attr("class","img-responsive");
+        $("#div2 .pagination").css("display","none");
+
+    }
 </script>
 </body>
 </html>
