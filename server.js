@@ -4685,21 +4685,115 @@ app.get('/w-odi-bt-19',function (req,res) {
     })
 });
 
-app.get('/women-news',function (req,res) {
+app.get('/w-headlines',function (req,res) {
 
-    var url ="http://www.espncricinfo.com/icc-womens-championship-2014-16/content/story/news.html?object=772563";
+    var url = "http://www.icc-cricket.com/search?q=women%20cricket&page="+req.query.id;
     request(url, function(error, response, html) {
 
         var $ = cheerio.load(html);
-
         if(!error)
         {
-            var data = $(".story-item").html();
+            var data = $(".searchResults").html();
             res.send(data);
         }
     });
 
 });
+
+app.get('/featuring-news',function (req,res) {
+
+    var url ="http://www.espncricinfo.com/women/content/story/features.html?object=207455";
+    request(url, function(error, response, html) {
+
+        var $ = cheerio.load(html);
+        if(!error)
+        {
+            var data = $(".story-item");
+            console.log(data.length);
+            var str= "";
+            for(var i=0;i<data.length;i++)
+            {
+                str += data.eq(i).html();
+            }
+            res.send(str);
+        }
+    });
+});
+
+app.get('/w-photos',function (req,res) {
+
+    var url ="http://www.espncricinfo.com/women/content/image/index.html?object=207455";
+    request(url, function(error, response, html) {
+
+        var $ = cheerio.load(html);
+        if(!error)
+        {
+            var data = $(".img-thumbnails").html();
+            res.send(data);
+        }
+    });
+});
+
+
+app.get('/w-rankings',function (req,res) {
+
+    var url ="http://www.espncricinfo.com/women/content/page/374213.html";
+    request(url, function(error, response, html) {
+
+        var $ = cheerio.load(html);
+        if(!error)
+        {
+            var data = $(".pnl650M").html();
+            res.send(data);
+        }
+    });
+});
+
+
+
+app.get('/w-results',function (req,res) {
+
+   var url ="http://www.espncricinfo.com/icc-womens-championship-2014-16/engine/series/772563.html";
+    request(url, function(error, response, html) {
+
+        var $ = cheerio.load(html);
+        if(!error)
+        {
+            var data = $(".row").filter('.collapse').html();
+            res.send(data);
+        }
+    });
+});
+
+app.get('/w-fixtures',function (req,res) {
+
+    var url ="http://www.espncricinfo.com/women/content/match/fixtures.html?class=8;class=9;class=10;future=1";
+    request(url, function(error, response, html) {
+
+        var $ = cheerio.load(html);
+        if(!error)
+        {
+            var data = $(".fixtures_list").filter('.clearfix').html();
+            res.send(data);
+        }
+    });
+});
+
+app.get('/w-scores',function (req,res) {
+
+    var url = req.query.url;
+    request(url, function(error, response, html) {
+
+        var $ = cheerio.load(html);
+        if(!error)
+        {
+            var data = $("#full-scorecard").html();
+            res.send(data);
+        }
+    });
+});
+
+
 app.post('/favourites', function (req, res) {
 
     dbhandler.searchFavourites(req.body.username, function (result) {
@@ -4712,7 +4806,6 @@ app.post('/favourites', function (req, res) {
 
 
 app.listen(app.get('port'),function () {
-
     console.log("Server started and listening at port " + app.get('port'));
 });
 

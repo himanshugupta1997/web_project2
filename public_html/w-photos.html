@@ -78,7 +78,10 @@
         font-size: 1.3em;
     }
 
-
+    h1
+    {
+        font-size: 80px;
+    }
     @media (max-width: 767px) {
 
         .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -94,30 +97,18 @@
             color: #ffbbbc;
             background-color: #c02b94;
         }
+
+        h1
+        {
+            font-size: 50px;
+        }
     }
 
-    body
-    {
-        background: url("assets/img/backgrounds/bg7.jpg");
-        background-size: 100%;
-    }
 
-    a
-    {
-        color: white;
-    }
-
-    a:hover
-    {
-        background-color: tomato;
-        color: white;
-    }
-    
 
 
 </style>
-<body>
-
+<body style="background-color:lightpink">
 
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -144,98 +135,100 @@
         </div>
     </div>
 </nav>
-
-
+<div id="t1" style="display: none"></div>
 <div class="container">
-    <br><br>
     <div class="row">
-
-        <div class="col-sm-12">
-            <h1 align="center" style="font-family: Serif ; font-size: 80px;color: blueviolet" >CRICKET STATS</h1>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <h1 align="center" style="font-family: Serif ; color: red">Image Gallery</h1>
         </div>
-
-    </div>
-    <br><br>
-    <div class="row">
-
-        <div class="col-sm-5" style="background-color: white;box-shadow: 8px 8px 16px black; color: purple">
-            <h2 align="center">TEST MATCHES</h2>
-            <table class="table table-responsive table-bordered table-hover" id="t1">
-
-                <tbody >
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/batting.html">Batting records</a></td>
-                </tr>
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/bowling.html">Bowling records</a></td>
-                </tr>
-
-                <tr>
-                    <td> <a style="text-decoration: none" href="w-test/wicket-keeping.html">Wicketkeeping records</a></td>
-                </tr>
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/fielding.html">Fielding records</a></td>
-                </tr>
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/all-round.html">All-round records</a></td>
-                </tr>
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-test/partnership.html">Partnership records</a></td>
-                </tr>
-
-
-                </tbody>
-            </table>
-        </div>
-
-        <div class="col-sm-2"></div>
-
-        <div class="col-sm-5" style="background-color: white;box-shadow: 8px 8px 16px black; color: purple;">
-            <h2 align="center">ODI</h2>
-            <table class="table table-responsive table-bordered table-hover">
-
-                <tbody >
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/batting.html">Batting records</a></td>
-                </tr>
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/bowling.html">Bowling records</a></td>
-                </tr>
-
-                <tr>
-                    <td> <a style="text-decoration: none" href="w-odi/wicket-keeping.html">Wicketkeeping records</a></td>
-                </tr>
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/fielding.html">Fielding records</a></td>
-                </tr>
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/all-round.html">All-round records</a></td>
-                </tr>
-
-                <tr>
-                    <td><a style="text-decoration: none" href="w-odi/partnership.html">Partnership records</a></td>
-                </tr>
-
-
-                </tbody>
-            </table>
-        </div>
-
-
+        <div class="col-sm-1"></div>
     </div>
 </div>
+<br><br><br><br>
+<div class="container" id="box"></div>
 
 <script>
 
 
-    $('td').css({'background-color' : 'purple', 'color' : 'white', 'text-align' : 'center', 'font-size' : '1.3em'});
 
-    
+    $(function () {
+
+        $.get('/w-photos', function (data, status) {
+            show_table(data);
+        });
+
+        function show_table(data) {
+
+            $("#t1").html(data);
+            var el1 = $("#t1 img");
+            var el2 = $("#t1 a");
+            $("#t1 .share-count").css("display","none");
+
+            var i=0;
+            console.log(el1.length);
+            console.log(el2.length);
+            for( i=0;i<el1.length;i++)
+            {
+
+                if(el1.eq(i).attr("src")[0]!='h')
+                    el1.eq(i).attr("src", "http://p.imgci.com" + el1.eq(i).attr("src"));
+            }
+
+
+            for( i=0;i<el2.length;i++)
+            {
+                el2.eq(i).attr("href", "http://www.espncricinfo.com" + el2.eq(i).attr("href"));
+            }
+
+            $("#t1 div").filter(".share-actions").css("display","none");
+
+
+            var str='';
+            var val1,val2,val3,k=0;
+            var link1,link2,link3;
+            var el3 = $("#t1 li").filter('.thumb-content');
+            var length = Math.floor(el3.length/3);
+            console.log(length);
+            for(i=0;i<length;i++)
+            {
+
+                         val1=el1.eq(k).attr("src");
+                         link1=el2.eq(k).attr("href");
+                         k=k+3;
+                         val2=el1.eq(k).attr("src");
+                         link2=el2.eq(k).attr("href");
+                         k=k+3;
+                         val3=el1.eq(k).attr("src");
+                         link3=el2.eq(k).attr("href");
+                         k=k+3;
+
+          str+=
+                          '<div class="row">'+
+                          '<div class="col-sm-4">'+
+                          '<a href="' + link1 + '" class="thumbnail">'+
+                          '<img src="'+ val1 +'">'+
+                          '</a>'+
+                          '</div>'+
+                          '<div class="col-sm-4">'+
+                          '<a href="' + link2 + '" class="thumbnail">'+
+                          '<img src="'+ val2 +'">'+
+                          '</a>'+
+                          '</div>'+
+                          '<div class="col-sm-4">'+
+                          '<a href="' + link3 + '" class="thumbnail">'+
+                          '<img src="'+ val3 +'">'+
+                          '</a>'+
+                          '</div>'+
+                          '</div>'+'<br>';
+            }
+
+            $("#box").html(str);
+
+        }
+    });
+
+
 
 </script>
 </body>

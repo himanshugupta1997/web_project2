@@ -215,13 +215,8 @@
 
 </div>
 <br><br><br><br><br>
+
 <script>
-
-
-
-    $('a').attr('href','#');
-
-
 
 
     function show_table(data) {
@@ -230,16 +225,38 @@
         $(".container").css("display","none");
         $("#table").css("display","block");
         $("#t1").html(data);
-        $("#t1 a").attr("href","#");
+        var el1 = $("#t1 img");
+        var el2 = $("#t1 a");
+        $("#t1 .caption").css("display","none");
+
+        //el2.attr("href","#");
+
+        var i=0;
+        for( i=0;i<el1.length;i++)
+        {
+            el1.eq(i).attr("src", "http://p.imgci.com" + el1.eq(i).attr("src"));
+        }
+
+        for( i=0;i<el2.length;i++)
+        {
+            el2.eq(i).attr("href", "http://www.espncricinfo.com" + el2.eq(i).attr("href"));
+        }
+
+
     }
 
     $("#1").click(function () {
 
-        $("#loading").css("display","block");
+        /*$("#loading").css("display","block");
 
         $.get('/w-odi-ar-1',function (data,status) {
             show_table(data);
-        });
+        });*/
+        $.get('/women-news',function (data,status) {
+
+            //console.log(data.eq(1).html());
+            show_table(data);
+        })
     });
 
     $("#2").click(function () {
