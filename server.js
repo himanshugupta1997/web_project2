@@ -178,20 +178,24 @@ app.post('/login',function (req, res) {
 
 app.post('/getFavourites', function (req,res) {
 
-
-    // console.log("Inside Get Favourites in server");
     dbhandler.searchFavourites(req.body.username, function (result) {
 
-
-
-        // console.log("Sending Result");
-        // console.log(result);
         res.send({fav : result});
 
 
     });
 
 });
+
+
+app.post('/review', function (req ,res) {
+
+    dbhandler.review({name : req.body.name , str2 : req.body.str2, str3 : req.body.str3,  str4 : req.body.str4 }, function (arg) {
+        res.send({val : 1});
+    });
+});
+
+
 function get_records(url,callback)
 {
     request(url, function(error, response, html) {
@@ -241,142 +245,13 @@ app.get('/get-scores',function (req,res) {
     });
 });
 
+app.get('/interview',function (req,res) {
 
-app.get('/featured',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/news";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablistmixedlpcatemp").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/interview1',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-
-
-app.get('/interview2',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=2";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-app.get('/interview3',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=3";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/interview4',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=4";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-app.get('/interview5',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=5";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-app.get('/interview6',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=6";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-app.get('/interview7',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=7";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-app.get('/interview8',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=8";
+    var url;
+    if(req.query.id==1)
+     url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews";
+    else
+        url =  "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=" +req.query.id;
     request(url, function(error, response, html) {
 
         var $ = cheerio.load(html);
@@ -389,177 +264,17 @@ app.get('/interview8',function (req,res) {
     });
 
 });
-app.get('/interview9',function (req,res) {
 
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=9";
+
+
+app.get('/hl',function (req,res) {
+
+    var url;
+    if(req.query.id==1)
+     url = "http://indianexpress.com/section/sports/cricket";
+    else url =  "http://indianexpress.com/section/sports/cricket/page/"+req.query.id;
     request(url, function(error, response, html) {
-
         var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/interview10',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/blogs/yahoo-cricket-interviews/?page=10";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $("#mediablogindex").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/hl1',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
-
-
-app.get('/hl2',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/psge/2";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/hl3',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/page/3";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/hl4',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/page/4";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/hl5',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/page/5";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/hl6',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/page/6";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/hl7',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/page/7";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/hl8',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/page/8";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
-
-app.get('/hl9',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/page/9";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
         if(!error)
         {
             var data = $(".nation").html();
@@ -570,21 +285,6 @@ app.get('/hl9',function (req,res) {
 });
 
 
-app.get('/hl10',function (req,res) {
-
-    var url = "http://indianexpress.com/section/sports/cricket/page/10";
-    request(url, function(error, response, html) {
-
-        var $ = cheerio.load(html);
-
-        if(!error)
-        {
-            var data = $(".nation").html();
-            res.send(data);
-        }
-    });
-
-});
 app.get('/photo',function (req,res) {
 
     //var url = "https://cricket.yahoo.com/photos";
@@ -602,119 +302,46 @@ app.get('/photo',function (req,res) {
         }
     });
 
-})
-app.get('/test1',function (req,res) {
+});
+app.get('/test',function (req,res) {
 
-    var url = "https://cricket.yahoo.com/matches/schedule/test-match";
+    var url;
+    if(req.query.id==1)
+     url = "https://cricket.yahoo.com/matches/schedule/test-match";
+    else
+        url = "https://cricket.yahoo.com/matches/schedule/test-match/page_"+req.query.id;
     upcoming_records(url,function (result) {
         res.send(result);
     });
 });
 
-app.get('/test2',function (req,res) {
+app.get('/odi',function (req,res) {
 
-    var url = "https://cricket.yahoo.com/matches/schedule/test-match/page_2";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
+    var url;
+    if(req.query.id==1)
+     url = "https://cricket.yahoo.com/matches/schedule/odi-match";
+    else
+        url = "https://cricket.yahoo.com/matches/schedule/odi-match/page_"+req.query.id;
 
-});
-app.get('/test3',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/matches/schedule/test-match/page_3";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
-
-});
-
-app.get('/test4',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/matches/schedule/test-match/page_4";
     upcoming_records(url,function (result) {
         res.send(result);
     });
 
 });
 
-app.get('/odi1',function (req,res) {
 
-    var url = "https://cricket.yahoo.com/matches/schedule/odi-match";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
+app.get('/t20',function (req,res) {
 
-
-});
-
-app.get('/odi2',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/matches/schedule/odi-match/page_2";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
-
-
-});
-app.get('/odi3',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/matches/schedule/odi-match/page_3";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
-
-
-});
-app.get('/odi4',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/matches/schedule/odi-match/page_4";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
-
-
-});
-
-app.get('/odi5',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/matches/schedule/odi-match/page_5";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
-
-
-});
-
-
-app.get('/t201',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/matches/schedule/twenty20-match";
+    var url;
+    if(req.query.id==1)
+     url = "https://cricket.yahoo.com/matches/schedule/twenty20-match";
+    else
+        url = "https://cricket.yahoo.com/matches/schedule/twenty20-match/page_"+req.query.id;
     upcoming_records(url,function (result) {
         res.send(result);
     });
 
 });
-
-app.get('/t202',function (req,res) {
-
-    var url = "https://cricket.yahoo.com/matches/schedule/twenty20-match/page_2";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
-
-
-});
-
-app.get('/t203',function (req,res) {
-
-
-    var url = "https://cricket.yahoo.com/matches/schedule/twenty20-match/page_3";
-    upcoming_records(url,function (result) {
-        res.send(result);
-    });
-
-});
-
 
 
 app.get('/test-up1',function (req,res) {
@@ -4759,7 +4386,8 @@ app.get('/w-results',function (req,res) {
         var $ = cheerio.load(html);
         if(!error)
         {
-            var data = $(".row").filter('.collapse').html();
+           // var data = $(".row").filter('.collapse').html();
+            var data = $(".news-pannel").html();
             res.send(data);
         }
     });
@@ -4803,7 +4431,6 @@ app.post('/favourites', function (req, res) {
     });
 
 });
-
 
 app.listen(app.get('port'),function () {
     console.log("Server started and listening at port " + app.get('port'));

@@ -10,7 +10,6 @@
     <script src="js/bootstrap.js"></script>
 
 
-
 </head>
 <style>
 
@@ -110,7 +109,7 @@
 
 
 </style>
-<body style="background-color: bisque">
+<body style="background-color: white">
 
 
 <nav class="navbar navbar-default">
@@ -166,6 +165,7 @@
 
     $(function () {
 
+        $('#t1').html("<p style='font-size: 2em; color: purple;'> Loading...</p>");
         $.get('/featuring-news', function (data, status) {
             show_table(data);
         });
@@ -187,21 +187,22 @@
             for( i=0;i<el2.length;i++)
             {
                 el2.eq(i).attr("href", "http://www.espncricinfo.com" + el2.eq(i).attr("href"));
+                el2.eq(i).attr("target","_blank");
             }
 
             el2=$("#t1 h2").filter(".story-title");
             for(i=0;i<el2.length;i++)
             {
-                el2.eq(i).css("background-color","hotpink");
+                el2.eq(i).css({"background-color" : "purple", "color" : "white" , "text-align" : "center"});
             }
+
+            $('.col-sm-10 a').css({'color' : 'white'});
+            $('.author').css({'display' : 'none'});
+            $('.match-title').css({'color' : 'purple', 'font-size' : '2.2em'});
+            $('.story-brief').css({'color' : 'white', 'background-color' : 'green' , 'font-size' : '1.2em'});
 
         }
     });
-
-
-
-
-
 
 
 </script>

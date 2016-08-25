@@ -103,13 +103,44 @@
             font-style: italic;
             font-size: 50px;
         }
+
+
+    }
+
+    figure
+    {
+        color: white;
+        background-color: purple;
+
+    }
+
+    .col-sm-10 li
+    {
+        margin: 15px;
+    }
+
+
+
+    ul figure
+    {
+        text-align: center;
+    }
+
+    ul p
+    {
+        text-align: justify;
+    }
+
+    ul
+    {
+        list-style-type: none;
     }
 
 
 
 
 </style>
-<body style="background-color:orange;">
+<body style="background-color:whitesmoke;">
 
 
 <nav class="navbar navbar-default">
@@ -143,18 +174,18 @@
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-10" >
-            <h1 align="center" style="font-family: Serif ; color:blue">HEADLINES</h1>
+            <h1 align="center" style="font-family: Serif ; color:purple">HEADLINES</h1>
         </div>
 
         <div class="col-sm-1"></div>
     </div>
 </div>
 <br><br><br>
-
 <div class="container" id="d1" style="display:none;">
     <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-10" id="t1" >
+        <div class="col-sm-10"  >
+            <ul id="t1"></ul>
         </div>
         <div class="col-sm-1"></div>
     </div>
@@ -162,7 +193,9 @@
 <div class="container" id="d2" style="display: none">
     <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-10" id="t2" >
+        <div class="col-sm-10" >
+
+            <ul id="t2"></ul>
         </div>
         <div class="col-sm-1"></div>
     </div>
@@ -170,7 +203,11 @@
 <div class="container" id="d3" style="display: none;">
     <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-10" id="t3" >
+        <div class="col-sm-10" >
+
+
+            <ul id="t3"></ul>
+
         </div>
         <div class="col-sm-1"></div>
     </div>
@@ -178,7 +215,9 @@
 <div class="container" id="d4" style="display: none">
     <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-10" id="t4" >
+        <div class="col-sm-10"  >
+
+            <ul id="t4"></ul>
         </div>
         <div class="col-sm-1"></div>
     </div>
@@ -186,7 +225,9 @@
 <div class="container" id="d5" style="display: none;">
     <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-10" id="t5" >
+        <div class="col-sm-10"  >
+
+            <ul id="t5"></ul>
         </div>
         <div class="col-sm-1"></div>
     </div>
@@ -195,21 +236,20 @@
 <div id="loading" style="display: none">
     <h1 align="center">Loading...</h1>
 </div>
+<button title="go to top" class="btn-lg btn-success" id="top" style="display: none"><a href="#" style="color: white"> Go toTop</a></button>
 <br><br>
 <script>
-
 
 var cnt=1;
 $(function () {
 
     $.get('/w-headlines',{id:1},function (data,status) {
-        show_news(data);
-
+        show_news(data,function(){});
     });
-
 });
 
-function show_news(data) {
+
+function show_news(data,callback) {
 
     $("#d"+cnt).css("display","block");
     $("#t"+cnt).html(data);
@@ -220,12 +260,17 @@ function show_news(data) {
     for(var i=0;i<el.length;i++)
     {
         el.eq(i).attr("href","http://www.icc-cricket.com/search?q=women%20cricket&page=1"+el.eq(i).attr("href"));
-        el.eq(i).css("font-size",40).css("font-family","Serif").css("color","red").css("background-color","white");
+        el.eq(i).css("font-size",40).css("font-family","Serif").css("color","red").css("background-color","white").attr("target","_blank");
     }
+
     $("#t" + cnt +" figcaption").css("font-weight","bold").css("font-size",20).css("font-family","Arial");
     $("#t" +cnt + " figcaption").append('<br><br>');
 
+    $('figure a').css({'backgound-color' : 'white', 'color' : 'purple'});
+
+    $('img').css({'width' : '33%', 'margin' : '10px', 'margin-left' : '33%'});
     cnt++;
+  callback();
 
 }
 
@@ -244,16 +289,16 @@ $(window).on( "scroll" , function() {
             $("#loading").css("display","block");
             console.log(cnt);
             $.get('/w-headlines',{id:cnt},function (data,status) {
-                show_news(data);
-                $("#loading").css("display","none");
+                show_news(data,function () {
+                    $("#loading").css("display","none");
+                    ans=true;
+                });
             });
-
         }
-    }
-
-    else
-    {
-        ans=true;
+       else if(cnt>5)
+        {
+            $("#top").css("display","block");
+        }
     }
 
 });

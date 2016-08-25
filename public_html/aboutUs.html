@@ -91,22 +91,25 @@
 
 
 
-    @media screen and (max-width:700px)
-    {
-        #upper
+    @media (max-width:1000px) {
+
+
+        .photo
         {
-            font-size:1em;
+            height: 100px;
+            margin-left: 35%;
         }
-        #lower
+
+        .l
         {
             font-size: 1em;
         }
     }
-    
+
     body
     {
         background: url("assets/img/backgrounds/bg6.jpg");
-        background-size: 90%;
+        background-size: 100%;
     }
 
 </style>
@@ -139,72 +142,91 @@
 </nav>
 
 <div class="container-fluid">
+    <br><br>
 
     <div class="row">
-
-        <div class="col-sm-2">
-
-
-
-        </div>
-
-        <div class="col-sm-8" style="background-color: teal; color: white">
-
-            <p style="text-align: center; font-size: 2em">We are a team of just 2 people. We both are Delhi-Technological University  Computer Science Students. We used node.js to build the backend of this website.</p>
+        <div class="col-md-2">
 
 
 
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-md-8" style="background-color: white; color: blue; border: 5px solid black; box-shadow: 8px 8px 4px darkgray">
 
+            <h1 style="text-align: center; font-family: 'Comic Sans MS'">The Team</h1>
+            <br>
+            <p style="color: white; background-color: blue; font-size: 1.5em; text-align: justify; padding: 5px" >
+
+                Our team comprises of just two members. We both are Delhi Technological University students. We are pursuing Btech in Computer Science and engineering and are aspiring to be web developers.
+
+            </p>
 
 
         </div>
+
+        <div class="col-md-2">
+
+
+        </div>
+
+
 
     </div>
-
-    <br><br><br>
+    <br><br>
 
     <div class="row">
 
-        <div class="col-sm-1">
+        <div class="col-md-1">
 
-
-        </div>
-        <div class="col-sm-4"  style="background-color: teal; text-align: center; color: white">
-            <br>
-
-            <img src="assets/img/backgrounds/harshit.jpg" style="margin-left: 28%; height: 180px" class="img-circle img-responsive">
-            <br>
-            <p style="font-size: 2.5em">Harshit Aggarwal</p>
-            <br>
-            <p style="font-size: 2.1em"><a href="mailto: harshitaggarwal283@yahoo.com" style="text-decoration: none; color: white">harshitaggarwal283@yahoo.com</a> </p>
-            
-
-        </div>
-        <div class="col-sm-2">
-
-
-        </div>
-        <div class="col-sm-4"  style="background-color: teal; text-align: center; color: white">
-            <br>
-
-            <img src="assets/img/backgrounds/photo.jpg" style="margin-left: 28%; height: 180px" class="img-circle img-responsive">
-            <br>
-            <p style="font-size: 2.5em">Himanshu Gupta</p>
-
-            <br>
-            <p style="font-size: 2.1em"><a href="mailto: himanshugupta1997@gmail.com" style="text-decoration: none; color: white">himanshugupta1997@gmail.com</a> </p>
 
 
         </div>
 
-        <div class="col-sm-1">
+        <div class="col-md-4" style="background-color: white; color: blue; border: 5px solid black; box-shadow: 8px 8px 4px darkgray">
+
+            <h1 style="text-align: center; font-family: 'Comic Sans MS'">Harshit Aggarwal</h1>
+            <br>
+            <img src="assets/img/backgrounds/harshit.jpg" class="img-responsive img-thumbnail photo" style="margin-left: 28%; width: 40%; height: auto">
+            <br><br>
+            <p style="color: white; background-color: blue; font-size: 1.5em; text-align: justify; padding: 5px" >
+
+                <a href="mailto:harshitaggarwal283@yahoo.com" style="color: white" class="l">harshitaggarwal283@yahoo.com</a>
+
+
+
+            </p>
 
 
         </div>
 
+        <div class="col-md-2">
+
+
+
+        </div>
+
+        <div class="col-md-4" style="background-color: white; color: blue; border: 5px solid black; box-shadow: 8px 8px 4px darkgray">
+
+            <h1 style="text-align: center; font-family: 'Comic Sans MS'">Himanshu Gupta</h1>
+            <br>
+            <img src="assets/img/backgrounds/photo.jpg" class="img-responsive img-thumbnail photo" style="margin-left: 25%; width: 50% ; height: auto">
+            <br><br>
+            <p style="color: white; background-color: blue; font-size: 1.5em; text-align: justify; padding: 5px" >
+
+                <a href="mailto:himanshu.dtu.coe@gmail.com" style="color: white; text-align: justify" class="l">himanshu.dtu.coe@gmail.com</a>
+
+
+
+            </p>
+
+
+        </div>
+
+        <div class="col-md-1">
+
+
+
+        </div>
 
 
     </div>
@@ -212,6 +234,7 @@
 
 
 </div>
+
 
 <script>
 
@@ -224,6 +247,9 @@
 
             $('.navbar').html(string);
         }
+
+
+
     });
 
 </script>
